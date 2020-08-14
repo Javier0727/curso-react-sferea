@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import * as Actions from '../../store/actions'
-import { Typography } from '@material-ui/core';
 
 const Header = () => {
   const countPokemon = useSelector(({ pokemons }) => pokemons.totalPokemons)
@@ -13,9 +12,7 @@ const Header = () => {
 
   return (
     <div className='w-full bg-blue-600 text-white p-5'>
-      <Typography>
-        Hay {countPokemon} pokemon
-      </Typography>
+      Hay {countPokemon} pokemon
     </div>
   )
 }
