@@ -9,7 +9,8 @@ const initialState = {
     next: null,
     previous: null,
     actual: 1
-  }
+  },
+  name: ''
 }
 
 const pokemons = (state = initialState, action) => {
@@ -30,6 +31,13 @@ const pokemons = (state = initialState, action) => {
         ...state,
         pokemonData: { ...payload }
 
+      }
+      break;
+    case Actions.SET_NAME:
+      // let { payload } = action
+      return {
+        ...state,
+        name: action.payload
       }
       break;
 

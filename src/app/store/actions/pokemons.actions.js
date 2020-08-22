@@ -3,6 +3,7 @@ import { BASE_API } from '../../constants/urls'
 
 export const GET_POKEMONS = 'GET_POKEMONS'
 export const GET_POKEMON_DATA = 'GET_POKEMON_DATA'
+export const SET_NAME = 'SET_NAME'
 
 export const getPokeList = () => {
   const request = axios.get(`${BASE_API}pokemon?offset=0&limit=20`)
@@ -36,6 +37,15 @@ export const getPokemonData = (id) => {
         type: GET_POKEMON_DATA,
         payload: req.data
       })
+    })
+  }
+}
+
+export const setName = (name) => {
+  return dispatch => {
+    return dispatch({
+      type: SET_NAME,
+      payload: name
     })
   }
 }
